@@ -1,0 +1,26 @@
+# Android Studio
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# java specific
+*.class
+*.jar
+
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.zip
+*.exe
+*.bat
