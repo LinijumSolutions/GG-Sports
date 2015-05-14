@@ -1,17 +1,21 @@
 package com.linijumsolutions.gg_sports;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import com.parse.ParseObject;
 
 
-public class MenuActivity extends ActionBarActivity {
+public class MenuActivity extends Activity {
+    protected MyApplication app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        app = (MyApplication)getApplication();
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
     }
 
 }

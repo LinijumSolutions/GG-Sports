@@ -13,7 +13,6 @@
 
 # java specific
 *.class
-*.jar
 
 ## generic files to ignore
 *~
