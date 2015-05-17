@@ -47,8 +47,4 @@ public class Challenge {
     public SportType getSportType() {
         return sportType;
     }
-
-    public void setSportType(SportType sportType) {
-        this.sportType = sportType;
-    }
 }
