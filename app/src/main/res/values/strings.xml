@@ -1,4 +1,5 @@
-﻿<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
     <string name="app_name" translatable="false">GG-Sports</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -33,7 +34,7 @@
         <item>Dviratis</item>
         <item>Ėjimas</item>
     </string-array>
-    <string name="mygtukasPradetiSuMarsrutu">Pradėti su maršruto</string>
+    <string name="mygtukasPradetiSuMarsrutu">Pradėti su maršrutu</string>
     <string name="mygtukasPridetiBeMarsruto">Pradėti be maršruto</string>
 
 
@@ -58,4 +59,9 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
+    <string name="title_activity_generate_route">Maršruto generavimas</string>
+    <string name="distance_title">Atstumas</string>
+    <string name="generate_title">Generuoti</string>
+    <string name="start_title">Pradėti</string>
+
 </resources>
