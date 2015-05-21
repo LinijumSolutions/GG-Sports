@@ -1,9 +1,13 @@
 package com.linijumsolutions.gg_sports.screens;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.Toast;
 
 import com.facebook.FacebookSdk;
 import com.linijumsolutions.gg_sports.MyApplication;
@@ -20,16 +24,21 @@ public class StarterActivity extends Activity {
         setContentView(R.layout.activity_starter);
         FacebookSdk.sdkInitialize(getApplicationContext());
 
-        int myTimer = 1000;
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                app = (MyApplication)getApplication();
-                Intent intent = ParseClient.setParseUser(StarterActivity.this);
-                StarterActivity.this.startActivity(intent);
-                StarterActivity.this.finish();
-            }
-        }, myTimer);
+        if(isNetworkAvailable()) {
+            int myTimer = 1000;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    app = (MyApplication) getApplication();
+                    Intent intent = ParseClient.setParseUser(StarterActivity.this);
+                    StarterActivity.this.startActivity(intent);
+                    StarterActivity.this.finish();
+                }
+            }, myTimer);
+        }else{
+            Toast.makeText(getApplicationContext(),"Check your internet connection", Toast.LENGTH_LONG).show();
+            this.finish();
+        }
 
     }
 
@@ -38,5 +47,12 @@ public class StarterActivity extends Activity {
     {
         super.onBackPressed();
         this.finish();
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 }

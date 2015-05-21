@@ -2,12 +2,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
+
+
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@mipmap/logo"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_margin="10dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/login_name"
+        android:id="@+id/button3" />
 
 </RelativeLayout>

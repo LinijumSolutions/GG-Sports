@@ -59,4 +59,5 @@
     <string name="error_invalid_password">Этот пароль слишком короткий</string>
     <string name="error_incorrect_password">Этот пароль неправильный</string>
     <string name="error_field_required">Этот поле обязательно к заполнению</string>
+    <string name="login_name">Davai davai</string>
 </resources>

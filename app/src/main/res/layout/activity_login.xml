@@ -1,19 +1,6 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    tools:context=".LoginActivity"
-    android:clickable="true"
-    android:onClick="setContentView">
+    android:name="com.linijumsolutions.gg_sports.screens.LoginFragment"/>
 
-
-    <fragment
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="com.linijumsolutions.gg_sports.screens.LoginFragment"
-        android:id="@+id/fragment"
-        android:layout_gravity="center_horizontal" />
-</LinearLayout>
 
