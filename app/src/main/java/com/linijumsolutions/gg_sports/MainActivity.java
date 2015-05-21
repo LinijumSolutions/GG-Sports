@@ -11,16 +11,13 @@ import com.parse.ParseObject;
 
 public class MainActivity extends Activity {
 
-    protected MyApplication app;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        app = (MyApplication)getApplication();
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
+//        ParseObject testObject = new ParseObject("TestObject");
+//        testObject.put("foo", "bar");
+//        testObject.saveInBackground();
     }
 
     public void onStartTrainingClicked(View v){
