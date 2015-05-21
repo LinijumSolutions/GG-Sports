@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.facebook.FacebookSdk;
 import com.linijumsolutions.gg_sports.MyApplication;
 import com.linijumsolutions.gg_sports.R;
 import com.linijumsolutions.gg_sports.clients.ParseClient;
@@ -17,6 +18,7 @@ public class StarterActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starter);
+        FacebookSdk.sdkInitialize(getApplicationContext());
 
         int myTimer = 1000;
         new Handler().postDelayed(new Runnable() {
