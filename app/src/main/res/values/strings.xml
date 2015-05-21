@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">GG-Sports</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="hello_world">Sveikas, pasauli!</string>
+    <string name="action_settings">Nustatymai</string>
     <string name="title_activity_prisijungimo_langas">Prisijungimo langas</string>
     <string name="langasEPastas">E-Paštas</string>
     <string name="langasSlaptazodis">Slaptažodis</string>
@@ -34,32 +34,35 @@
         <item>Dviratis</item>
         <item>Ėjimas</item>
     </string-array>
-    <string name="mygtukasPradetiSuMarsrutu">Pradėti su maršruto</string>
+    <string name="mygtukasPradetiSuMarsrutu">Pradėti su maršrutu</string>
     <string name="mygtukasPridetiBeMarsruto">Pradėti be maršruto</string>
 
 
     <string name="title_activity_marsruto_atvaizdavimo_langas">Maršruto atvaizdavimo langas</string>
 
-    <string name="title_activity_marsrutu_pasirinkimo_langas">Marsrutų pasirinkimo langas</string>
+    <string name="title_activity_marsrutu_pasirinkimo_langas">Maršrutų pasirinkimo langas</string>
     <string name="mygtukasSugeneruotiNauja">Sugeneruoti naują</string>
     <string name="mygtukasPradeti">Pradėti</string>
 
     <string name="title_activity_registracijos_langas">Registracijos langas</string>
     <string name="registracijaEPastas">E-Paštas</string>
     <string name="registracijaSlaptazodis1">Slaptažodis</string>
-    <string name="registracijaSlaptazodis2">Slaptažodis (dar kartą)</string>
+    <string name="registracijaSlaptazodis2">Slaptažodis (pakartoti)</string>
     <string name="mygtukasRegistruotis">Registruotis</string>
 
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
+    <string name="prompt_email">E-Paštas</string>
+    <string name="prompt_password">Slaptažodis</string>
+    <string name="action_sign_in">Registruotis</string>
+    <string name="action_sign_in_short">Registruotis</string>
 
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-
+    <string name="error_invalid_email">E-Pašto adresas klaidingas</string>
+    <string name="error_invalid_password">Slaptažodis per trumpas</string>
+    <string name="error_incorrect_password">Slaptažodis neteisingas</string>
+    <string name="error_field_required">Šis laukas yra privalomas</string>
+    <string name="title_activity_generate_route">Maršruto generavimas</string>
+    <string name="distance_title">Atstumas</string>
+    <string name="generate_title">Generuoti</string>
+    <string name="start_title">Pradėti</string>
 
     <string name="facebook_app_id">664150413729047</string>
 
