@@ -18,6 +18,7 @@ public class RouteSelectionActivity extends Activity {
 
     public void onGenerateNewClicked(View v){
         Intent intent = new Intent(this, GenerateRouteActivity.class);
+        intent.putExtra("type", getIntent().getLongExtra("type", 0));
         startActivity(intent);
     }
 }

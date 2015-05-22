@@ -29,9 +29,9 @@
 
     <string name="title_activity_treniruotes_pradejimo_langas">Выберите обучение</string>
     <string-array name="sarasasSportoSakos">
-        <item>Bėgimas</item>
-        <item>Dviratis</item>
-        <item>Ėjimas</item>
+        <item>Запуск</item>
+        <item>Велосипед</item>
+        <item>Прогулки</item>
     </string-array>
     <string name="mygtukasPradetiSuMarsrutu">Начинать с маршрутами</string>
     <string name="mygtukasPridetiBeMarsruto">Начинать без маршруту</string>
@@ -58,5 +58,9 @@
     <string name="error_invalid_password">Этот пароль слишком короткий</string>
     <string name="error_incorrect_password">Этот пароль неправильный</string>
     <string name="error_field_required">Этот поле обязательно к заполнению</string>
-    <string name="login_name">Davai davai</string>
+    <string name="login_name">Войти через Facebook</string>
+    <string name="distance_title">Pасстояние</string>
+    <string name="generate_title">Генерировать</string>
+    <string name="start_title">Начало</string>
+    <string name="title_activity_generate_route">Маршрут поколения</string>
 </resources>

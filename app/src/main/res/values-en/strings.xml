@@ -28,9 +28,9 @@
 
     <string name="title_activity_treniruotes_pradejimo_langas">Select training</string>
     <string-array name="sarasasSportoSakos">
-        <item>Bėgimas</item>
-        <item>Dviratis</item>
-        <item>Ėjimas</item>
+        <item>Running</item>
+        <item>Bicycling</item>
+        <item>Walking</item>
     </string-array>
     <string name="mygtukasPradetiSuMarsrutu">Begin with a route</string>
     <string name="mygtukasPridetiBeMarsruto">Begin without a route</string>

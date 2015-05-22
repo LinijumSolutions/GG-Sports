@@ -23,11 +23,15 @@ public class StartTrainingActivity extends Activity {
 
     public void onStartWithRouteClicked(View v){
         Intent intent = new Intent(this, RouteSelectionActivity.class);
+        Spinner spinner = (Spinner) findViewById(R.id.pasirinkimasSporto);
+        intent.putExtra("type", spinner.getSelectedItemId());
         startActivity(intent);
     }
 
     public void onStartWithoutRouteClicked(View v){
         Intent intent = new Intent(this, StartTrainingActivity.class);
+        Spinner spinner = (Spinner) findViewById(R.id.pasirinkimasSporto);
+        intent.putExtra("type", spinner.getSelectedItemId());
         startActivity(intent);
     }
 

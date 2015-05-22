@@ -25,6 +25,7 @@ public class GenerateRouteActivity extends Activity implements LocationListener 
     private RouteGenerator routeGenerator;
     private LatLng startPoint;
     private OnPathSet onPathSet = new OnPathSet();
+    private String trainingType = "walking";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,9 @@ public class GenerateRouteActivity extends Activity implements LocationListener 
         setContentView(R.layout.activity_generate_route);
         initializeMap();
         locationSettings();
+        if(getIntent().getLongExtra("type", 0) == 1){
+            trainingType = "driving";
+        }
     }
 
     private void initializeMap() {
@@ -61,7 +65,7 @@ public class GenerateRouteActivity extends Activity implements LocationListener 
             if(onPathSet.isDone == true) {
                 onPathSet = new OnPathSet();
                 onPathSet.isDone = false;
-                routeGenerator = new RouteGenerator(startPoint.latitude, startPoint.longitude, googleMap, "walking", onPathSet);
+                routeGenerator = new RouteGenerator(startPoint.latitude, startPoint.longitude, googleMap, trainingType, onPathSet);
                 googleMap.clear();
                 routeGenerator.DrawRoute(startPoint, Integer.parseInt(editField.getText().toString()));
             } else {

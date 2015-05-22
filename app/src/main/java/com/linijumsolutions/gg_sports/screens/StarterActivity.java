@@ -35,8 +35,8 @@ public class StarterActivity extends Activity {
                     StarterActivity.this.finish();
                 }
             }, myTimer);
-        }else{
-            Toast.makeText(getApplicationContext(),"Check your internet connection", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getApplicationContext(),"Check your internet connection and try again", Toast.LENGTH_LONG).show();
             this.finish();
         }
 
