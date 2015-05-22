@@ -1,66 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello_world">Привет, мир!</string>
     <string name="action_settings">Настройки</string>
-    <string name="title_activity_prisijungimo_langas">Подключить</string>
-    <string name="langasEPastas">И-Мейл</string>
-    <string name="langasSlaptazodis">Пароль</string>
-    <string name="mygtukasPrisijungti">Подключить</string>
-    <string name="mygtukasRegistracija">Зарегистрироваться</string>
 
     <string name="title_activity_pagrindinis_langas">Главное меню</string>
     <string name="mygtukasManoIstorija">Моя история</string>
     <string name="mygtukasMarsrutai">Маршруты</string>
     <string name="mygtukasIssukiai">Вызовы</string>
-    <string name="mygtukasPradetiTreniruote">Начинать обучение</string>
+    <string name="mygtukasPradetiTreniruote">Начало тренировку</string>
 
-    <string name="title_activity_treniruociu_istorijos_langas">История обучение</string>
-    <string name="mygtukasBendraIstorija">Общая история</string>
+    <string name="title_activity_treniruociu_istorijos_langas">История тренировки</string>
+    <string name="mygtukasBendraIstorija">Общая статистика</string>
 
     <string name="title_activity_bendros_statistikos_langas">Общая статистика</string>
-    <string name="tekstasMestiIssukiai">Отправленные вызовы</string>
-    <string name="tekstasIvykdytiIssukiai">Выполненные вызовы</string>
-    <string name="tekstasVidutinisGreitis">Средняя скорость</string>
-    <string name="tekstasVidutineTrukme">Средняя продолжительность</string>
-    <string name="tekstasBendraTrukme">Общая продолжительность</string>
-    <string name="tekstasSantykisTarpIssukiu">Отношение вызов</string>
+    <string name="tekstasMestiIssukiai">Отправленные вызовы:</string>
+    <string name="tekstasIvykdytiIssukiai">Выполненные вызовы:</string>
+    <string name="tekstasVidutinisGreitis">Средняя скорость:</string>
+    <string name="tekstasVidutineTrukme">Средняя продолжительность:</string>
+    <string name="tekstasBendraTrukme">Общая продолжительность:</string>
+    <string name="tekstasSantykisTarpIssukiu">Отношение вызов:</string>
 
     <string name="title_activity_marsrutu_langas">Список маршрутов</string>
 
-    <string name="title_activity_treniruotes_pradejimo_langas">Выберите обучение</string>
+    <string name="title_activity_treniruotes_pradejimo_langas">Tренировка</string>
     <string-array name="sarasasSportoSakos">
         <item>Запуск</item>
         <item>Велосипед</item>
         <item>Прогулки</item>
     </string-array>
-    <string name="mygtukasPradetiSuMarsrutu">Начинать с маршрутами</string>
-    <string name="mygtukasPridetiBeMarsruto">Начинать без маршруту</string>
+    <string name="mygtukasPradetiSuMarsrutu">Начало с маршрутами</string>
+    <string name="mygtukasPridetiBeMarsruto">Начало без маршруту</string>
 
-
-    <string name="title_activity_marsruto_atvaizdavimo_langas">Маршрут дисплей</string>
+    <string name="title_activity_marsruto_atvaizdavimo_langas">Cтатус тренировки</string>
 
     <string name="title_activity_marsrutu_pasirinkimo_langas">Выберите маршрут</string>
     <string name="mygtukasSugeneruotiNauja">Сгенерировать новый</string>
-    <string name="mygtukasPradeti">Начинать</string>
+    <string name="mygtukasPradeti">Начало</string>
 
-    <string name="title_activity_registracijos_langas">Зарегистрирования</string>
-    <string name="registracijaEPastas">И-Мейл</string>
-    <string name="registracijaSlaptazodis1">Пароль</string>
-    <string name="registracijaSlaptazodis2">Пароль (повторить)</string>
-    <string name="mygtukasRegistruotis">Зарегистрироваться</string>
-
-    <string name="prompt_email">И-Мейл</string>
-    <string name="prompt_password">Пароль</string>
-    <string name="action_sign_in">Зарегистрироваться</string>
-    <string name="action_sign_in_short">Зарегистрироваться</string>
-
-    <string name="error_invalid_email">Этот электронной адрес недействителен</string>
-    <string name="error_invalid_password">Этот пароль слишком короткий</string>
-    <string name="error_incorrect_password">Этот пароль неправильный</string>
-    <string name="error_field_required">Этот поле обязательно к заполнению</string>
     <string name="login_name">Войти через Facebook</string>
-    <string name="distance_title">Pасстояние</string>
+    <string name="distance_title">Pасстояние:</string>
     <string name="generate_title">Генерировать</string>
     <string name="start_title">Начало</string>
     <string name="title_activity_generate_route">Маршрут поколения</string>
+    <string name="training_end">Конец тренировки</string>
+    <string name="pause">Пауза</string>
+    <string name="time">Время:</string>
+    <string name="speed">Cкорость:</string>
+    <string name="avg_speed">Ср. скорость:</string>
+    <string name="no_internet">Проверьте подключение к Интернету и попробуйте еще раз!</string>
+    <string name="generating">Маршрут еще генерируется!</string>
+    <string name="map_error">Невозможно создать карту!</string>
+    <string name="no_distance">Укажите расстояние, на первый!</string>
 </resources>

@@ -1,8 +1,5 @@
 package com.linijumsolutions.gg_sports.models;
 
-/**
- * Created by lukas on 17/05/15.
- */
 public class ChallengeInvitation {
     private int id;
     private int senderId;

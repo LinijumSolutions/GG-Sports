@@ -1,4 +1,4 @@
-package com.linijumsolutions.gg_sports;
+package com.linijumsolutions.gg_sports.screens;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.facebook.FacebookSdk;
+import com.linijumsolutions.gg_sports.R;
 import com.linijumsolutions.gg_sports.screens.LoginActivity;
 import com.linijumsolutions.gg_sports.screens.StartTrainingActivity;
 import com.parse.ParseException;
@@ -22,13 +23,20 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        ParseObject testObject = new ParseObject("TestObject");
-//        testObject.put("foo", "bar");
-//        testObject.saveInBackground();
     }
 
     public void onStartTrainingClicked(View v){
         Intent intent = new Intent(this, StartTrainingActivity.class);
+        startActivity(intent);
+    }
+
+    public void onHistoryClicked(View v){
+        Intent intent = new Intent(this, HistoryActivity.class);
+        startActivity(intent);
+    }
+
+    public void onAllRoutesClicked(View v){
+        Intent intent = new Intent(this, AllRoutesActivity.class);
         startActivity(intent);
     }
 

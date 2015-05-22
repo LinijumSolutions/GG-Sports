@@ -16,6 +16,7 @@ import com.linijumsolutions.gg_sports.clients.ParseClient;
 
 
 public class StarterActivity extends Activity {
+
     protected MyApplication app;
 
     @Override
@@ -31,13 +32,13 @@ public class StarterActivity extends Activity {
                 public void run() {
                     app = (MyApplication) getApplication();
                     Intent intent = ParseClient.setParseUser(StarterActivity.this);
-                    StarterActivity.this.startActivity(intent);
-                    StarterActivity.this.finish();
+                    startActivity(intent);
+                    finish();
                 }
             }, myTimer);
         } else {
-            Toast.makeText(getApplicationContext(),"Check your internet connection and try again", Toast.LENGTH_LONG).show();
-            this.finish();
+            Toast.makeText(getApplicationContext(), getString(R.string.no_internet), Toast.LENGTH_LONG).show();
+            finish();
         }
 
     }
@@ -46,7 +47,7 @@ public class StarterActivity extends Activity {
     public void onBackPressed()
     {
         super.onBackPressed();
-        this.finish();
+        finish();
     }
 
     private boolean isNetworkAvailable() {

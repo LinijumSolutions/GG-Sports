@@ -2,9 +2,6 @@ package com.linijumsolutions.gg_sports.models;
 
 import java.util.List;
 
-/**
- * Created by lukas on 17/05/15.
- */
 public class Route {
     private int id;
     private String name;

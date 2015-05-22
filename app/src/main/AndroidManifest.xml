@@ -25,63 +25,84 @@
         <activity
             android:name=".screens.StarterActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".screens.LoginActivity"/>
+        <activity android:name=".screens.LoginActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
 
         <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:configChanges= "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"/>
 
         <provider android:authorities="com.facebook.app.FacebookContentProvider664150413729047"
             android:name="com.facebook.FacebookContentProvider"
             android:exported="true" />
 
         <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_treniruociu_istorijos_langas" >
+            android:name=".screens.MainActivity"
+            android:label="@string/title_activity_treniruociu_istorijos_langas"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
+
         <activity
             android:name=".screens.GenerateRouteActivity"
-            android:label="@string/title_activity_generate_route" >
+            android:label="@string/title_activity_generate_route"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
+
         <activity
             android:name=".screens.HistoryActivity"
-            android:label="@string/title_activity_treniruociu_istorijos_langas" >
+            android:label="@string/title_activity_treniruociu_istorijos_langas"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
+
         <activity
             android:name=".screens.StatisticsActivity"
-            android:label="@string/title_activity_bendros_statistikos_langas" >
+            android:label="@string/title_activity_bendros_statistikos_langas"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
+
         <activity
             android:name=".screens.AllRoutesActivity"
-            android:label="@string/title_activity_marsrutu_langas" >
+            android:label="@string/title_activity_marsrutu_langas"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
+
         <activity
             android:name=".screens.StartTrainingActivity"
-            android:label="@string/title_activity_treniruotes_pradejimo_langas" >
+            android:label="@string/title_activity_treniruotes_pradejimo_langas"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
+
         <activity
             android:name=".screens.RouteDisplayActivity"
-            android:label="@string/title_activity_marsruto_atvaizdavimo_langas" >
+            android:label="@string/title_activity_marsruto_atvaizdavimo_langas"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
+
         <activity
             android:name=".screens.RouteSelectionActivity"
-            android:label="@string/title_activity_marsrutu_pasirinkimo_langas" >
+            android:label="@string/title_activity_marsrutu_pasirinkimo_langas"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
         </activity>
-        <activity
-            android:name=".screens.RegisterActivity"
-            android:label="@string/title_activity_registracijos_langas" >
-        </activity>
-       
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDN0yMh3GXiFcOO8xHj2rZjuFpgPBTMMEE"/>

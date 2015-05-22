@@ -1,65 +1,52 @@
 <resources>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_prisijungimo_langas">Log in</string>
-    <string name="langasEPastas">E-Mail</string>
-    <string name="langasSlaptazodis">Password</string>
-    <string name="mygtukasPrisijungti">Log in</string>
-    <string name="mygtukasRegistracija">Sign up</string>
 
     <string name="title_activity_pagrindinis_langas">Main menu</string>
     <string name="mygtukasManoIstorija">My history</string>
     <string name="mygtukasMarsrutai">Routes</string>
     <string name="mygtukasIssukiai">Challenges</string>
-    <string name="mygtukasPradetiTreniruote">Begin training</string>
+    <string name="mygtukasPradetiTreniruote">Start workout</string>
 
-    <string name="title_activity_treniruociu_istorijos_langas">Training history</string>
-    <string name="mygtukasBendraIstorija">General history</string>
+    <string name="title_activity_treniruociu_istorijos_langas">Workouts history</string>
+    <string name="mygtukasBendraIstorija">General statistics</string>
 
     <string name="title_activity_bendros_statistikos_langas">General statistics</string>
-    <string name="tekstasMestiIssukiai">Sent challenges</string>
-    <string name="tekstasIvykdytiIssukiai">Completed challenges</string>
-    <string name="tekstasVidutinisGreitis">Average speed</string>
-    <string name="tekstasVidutineTrukme">Average duration</string>
-    <string name="tekstasBendraTrukme">Total duration</string>
-    <string name="tekstasSantykisTarpIssukiu">Challenge ratio</string>
+    <string name="tekstasMestiIssukiai">Sent challenges:</string>
+    <string name="tekstasIvykdytiIssukiai">Completed challenges:</string>
+    <string name="tekstasVidutinisGreitis">Average speed:</string>
+    <string name="tekstasVidutineTrukme">Average duration:</string>
+    <string name="tekstasBendraTrukme">Total duration:</string>
+    <string name="tekstasSantykisTarpIssukiu">Challenge ratio:</string>
 
     <string name="title_activity_marsrutu_langas">Route list</string>
 
-    <string name="title_activity_treniruotes_pradejimo_langas">Select training</string>
+    <string name="title_activity_treniruotes_pradejimo_langas">Workout</string>
     <string-array name="sarasasSportoSakos">
         <item>Running</item>
         <item>Bicycling</item>
         <item>Walking</item>
     </string-array>
-    <string name="mygtukasPradetiSuMarsrutu">Begin with a route</string>
-    <string name="mygtukasPridetiBeMarsruto">Begin without a route</string>
+    <string name="mygtukasPradetiSuMarsrutu">Start with a route</string>
+    <string name="mygtukasPridetiBeMarsruto">Start without a route</string>
 
+    <string name="title_activity_marsruto_atvaizdavimo_langas">Workout status</string>
 
-    <string name="title_activity_marsruto_atvaizdavimo_langas">Route display</string>
-
-    <string name="title_activity_marsrutu_pasirinkimo_langas">Select a route</string>
+    <string name="title_activity_marsrutu_pasirinkimo_langas">Route selection</string>
     <string name="mygtukasSugeneruotiNauja">Generate new</string>
-    <string name="mygtukasPradeti">Begin</string>
+    <string name="mygtukasPradeti">Start</string>
 
-    <string name="title_activity_registracijos_langas">Sign up</string>
-    <string name="registracijaEPastas">E-Mail</string>
-    <string name="registracijaSlaptazodis1">Password</string>
-    <string name="registracijaSlaptazodis2">Password (repeat)</string>
-    <string name="mygtukasRegistruotis">Sign up</string>
-
-    <string name="prompt_email">E-Mail</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign up</string>
-    <string name="action_sign_in_short">Sign up</string>
-
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="error_invalid_email">This email adress is invalid</string>
     <string name="title_activity_generate_route">Route generation</string>
     <string name="login_name">Log in with Facebook</string>
     <string name="start_title">Start</string>
     <string name="generate_title">Generate</string>
-    <string name="distance_title">Distance</string>
+    <string name="distance_title">Distance:</string>
+    <string name="training_end">End workout</string>
+    <string name="pause">Pause</string>
+    <string name="time">Time:</string>
+    <string name="speed">Speed:</string>
+    <string name="avg_speed">Avg. speed:</string>
+    <string name="no_internet">Check your internet connection and try again!</string>
+    <string name="generating">The route is still being generated!</string>
+    <string name="map_error">Unable to create map!</string>
+    <string name="no_distance">Specify distance at first!</string>
 </resources>

@@ -23,7 +23,8 @@
         android:id="@+id/mygtukasPradetiSuMarsrutu"
         android:layout_above="@+id/mygtukasPradetiBeMarsruto"
         android:layout_centerHorizontal="true"
-        android:onClick="onStartWithRouteClicked" />
+        android:onClick="onStartWithRouteClicked"
+        android:layout_marginBottom="5dp" />
 
     <Spinner
         android:layout_width="match_parent"

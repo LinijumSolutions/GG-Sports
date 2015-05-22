@@ -45,7 +45,7 @@ public class GenerateRouteActivity extends Activity implements LocationListener 
                 googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                 googleMap.setMyLocationEnabled(true);
             } else {
-                Toast.makeText(getApplicationContext(), "Unable to create map!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.map_error), Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -69,11 +69,15 @@ public class GenerateRouteActivity extends Activity implements LocationListener 
                 googleMap.clear();
                 routeGenerator.DrawRoute(startPoint, Integer.parseInt(editField.getText().toString()));
             } else {
-                Toast.makeText(getApplicationContext(), "Marsrutas vis dar generuojamas!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.generating), Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(getApplicationContext(), "Nenurodytas atstumas!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.no_distance), Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void onStartClicked(View v){
+
     }
 
     @Override

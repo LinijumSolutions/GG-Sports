@@ -12,27 +12,25 @@ import com.linijumsolutions.gg_sports.R;
 
 public class StartTrainingActivity extends Activity {
 
+    private Spinner spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_training);
-        Spinner spinner = (Spinner) findViewById(R.id.pasirinkimasSporto);
+        spinner = (Spinner) findViewById(R.id.pasirinkimasSporto);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sarasasSportoSakos, android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
     }
 
     public void onStartWithRouteClicked(View v){
         Intent intent = new Intent(this, RouteSelectionActivity.class);
-        Spinner spinner = (Spinner) findViewById(R.id.pasirinkimasSporto);
         intent.putExtra("type", spinner.getSelectedItemId());
         startActivity(intent);
     }
 
     public void onStartWithoutRouteClicked(View v){
-        Intent intent = new Intent(this, StartTrainingActivity.class);
-        Spinner spinner = (Spinner) findViewById(R.id.pasirinkimasSporto);
-        intent.putExtra("type", spinner.getSelectedItemId());
+        Intent intent = new Intent(this, RouteDisplayActivity.class);
         startActivity(intent);
     }
-
 }

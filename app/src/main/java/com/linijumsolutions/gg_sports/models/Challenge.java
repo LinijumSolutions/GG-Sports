@@ -2,9 +2,6 @@ package com.linijumsolutions.gg_sports.models;
 
 import java.util.Date;
 
-/**
- * Created by lukas on 13/05/15.
- */
 public class Challenge {
     private int id;
     private Date startTime;

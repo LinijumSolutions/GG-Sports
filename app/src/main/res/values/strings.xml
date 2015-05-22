@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">GG-Sports</string>
-    <string name="hello_world">Sveikas, pasauli!</string>
     <string name="action_settings">Nustatymai</string>
-    <string name="title_activity_prisijungimo_langas">Prisijungimo langas</string>
-    <string name="langasEPastas">E-Paštas</string>
-    <string name="langasSlaptazodis">Slaptažodis</string>
-    <string name="mygtukasPrisijungti">Prisijungti</string>
-    <string name="mygtukasRegistracija">Registruotis</string>
 
     <string name="title_activity_pagrindinis_langas">Pagrindinis langas</string>
     <string name="mygtukasManoIstorija">Mano istorija</string>
@@ -15,60 +9,51 @@
     <string name="mygtukasIssukiai">Iššūkiai</string>
     <string name="mygtukasPradetiTreniruote">Pradėti treniruotę</string>
 
-    <string name="title_activity_treniruociu_istorijos_langas">Treniruočių istorijos langas</string>
-    <string name="mygtukasBendraIstorija">Bendra istorija</string>
+    <string name="title_activity_treniruociu_istorijos_langas">Treniruočių istorija</string>
+    <string name="mygtukasBendraIstorija">Bendra statistika</string>
 
-    <string name="title_activity_bendros_statistikos_langas">Bendros statistikos langas</string>
-    <string name="tekstasMestiIssukiai">Mesti iššukiai</string>
-    <string name="tekstasIvykdytiIssukiai">Įvykdyti iššukiai</string>
-    <string name="tekstasVidutinisGreitis">Vidutinis greitis</string>
-    <string name="tekstasVidutineTrukme">Vidutinė trukmė</string>
-    <string name="tekstasBendraTrukme">Bendra trukmė</string>
-    <string name="tekstasSantykisTarpIssukiu">Santykis tarp iššukių</string>
+    <string name="title_activity_bendros_statistikos_langas">Bendra statistika</string>
+    <string name="tekstasMestiIssukiai">Mesti iššukiai:</string>
+    <string name="tekstasIvykdytiIssukiai">Įvykdyti iššukiai:</string>
+    <string name="tekstasVidutinisGreitis">Vidutinis greitis:</string>
+    <string name="tekstasVidutineTrukme">Vidutinė trukmė:</string>
+    <string name="tekstasBendraTrukme">Bendra trukmė:</string>
+    <string name="tekstasSantykisTarpIssukiu">Santykis tarp iššukių:</string>
 
-    <string name="title_activity_marsrutu_langas">Maršrutų langas</string>
+    <string name="title_activity_marsrutu_langas">Maršrutų sąrašas</string>
 
-    <string name="title_activity_treniruotes_pradejimo_langas">Treniruotės pradėjimo langas</string>
+    <string name="title_activity_treniruotes_pradejimo_langas">Treniruotė</string>
     <string-array name="sarasasSportoSakos">
         <item>Bėgimas</item>
-        <item>Dviratis</item>
+        <item>Važiavimas dviračiu</item>
         <item>Ėjimas</item>
     </string-array>
     <string name="mygtukasPradetiSuMarsrutu">Pradėti su maršrutu</string>
     <string name="mygtukasPridetiBeMarsruto">Pradėti be maršruto</string>
 
 
-    <string name="title_activity_marsruto_atvaizdavimo_langas">Maršruto atvaizdavimo langas</string>
+    <string name="title_activity_marsruto_atvaizdavimo_langas">Treniruotės eiga</string>
 
-    <string name="title_activity_marsrutu_pasirinkimo_langas">Maršrutų pasirinkimo langas</string>
+    <string name="title_activity_marsrutu_pasirinkimo_langas">Maršrutų pasirinkimas</string>
     <string name="mygtukasSugeneruotiNauja">Sugeneruoti naują</string>
     <string name="mygtukasPradeti">Pradėti</string>
 
-    <string name="title_activity_registracijos_langas">Registracijos langas</string>
-    <string name="registracijaEPastas">E-Paštas</string>
-    <string name="registracijaSlaptazodis1">Slaptažodis</string>
-    <string name="registracijaSlaptazodis2">Slaptažodis (pakartoti)</string>
-    <string name="mygtukasRegistruotis">Registruotis</string>
-
-    <string name="prompt_email">E-Paštas</string>
-    <string name="prompt_password">Slaptažodis</string>
-    <string name="action_sign_in">Registruotis</string>
-    <string name="action_sign_in_short">Registruotis</string>
-
-    <string name="error_invalid_email">E-Pašto adresas klaidingas</string>
-    <string name="error_invalid_password">Slaptažodis per trumpas</string>
-    <string name="error_incorrect_password">Slaptažodis neteisingas</string>
-    <string name="error_field_required">Šis laukas yra privalomas</string>
     <string name="title_activity_generate_route">Maršruto generavimas</string>
-    <string name="distance_title">Atstumas</string>
+    <string name="distance_title">Atstumas:</string>
     <string name="generate_title">Generuoti</string>
     <string name="start_title">Pradėti</string>
 
     <string name="facebook_app_id" translatable="false">664150413729047</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="login_name">Prisijungti su Facebook</string>
-
+    <string name="training_end">Baigti treniruotę</string>
+    <string name="pause">Sustabdyti</string>
+    <string name="time">Laikas:</string>
+    <string name="speed">Greitis:</string>
+    <string name="avg_speed">Vidutinis greitis:</string>
+    <string name="no_internet">Patikrinkite interneto prieigą!</string>
+    <string name="map_error">Neimanoma sukurti zemelapio!</string>
+    <string name="generating">Marsrutas vis dar generuojamas!</string>
+    <string name="no_distance">Nurodykite atstuma!</string>
 
 </resources>
