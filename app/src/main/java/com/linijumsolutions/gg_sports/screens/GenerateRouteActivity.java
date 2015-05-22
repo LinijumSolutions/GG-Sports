@@ -1,106 +1,84 @@
 package com.linijumsolutions.gg_sports.screens;
 
 import android.app.Activity;
-import android.app.Fragment;
+import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.linijumsolutions.gg_sports.R;
+import com.linijumsolutions.gg_sports.controllers.OnPathSet;
+import com.linijumsolutions.gg_sports.controllers.RouteGenerator;
 
 public class GenerateRouteActivity extends Activity implements LocationListener {
 
     private GoogleMap googleMap;
-    private Location location;
-    private double latitude;
-    private double longitude;
+    private RouteGenerator routeGenerator;
+    private LatLng startPoint;
+    private OnPathSet onPathSet = new OnPathSet();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate_route);
-        initilizeMap();
-        googleMapSetting();
+        initializeMap();
+        locationSettings();
     }
-    
-    private void initilizeMap() {
+
+    private void initializeMap() {
         if (googleMap == null) {
             googleMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-
-            if (googleMap == null) {
-                Toast.makeText(getApplicationContext(), "Sorry! unable to create maps", Toast.LENGTH_SHORT).show();
+            if(googleMap != null) {
+                googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                googleMap.setMyLocationEnabled(true);
+            } else {
+                Toast.makeText(getApplicationContext(), "Unable to create map!", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
-    private void googleMapSetting(){
-        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        // Enabling MyLocation Layer of Google Map
-        googleMap.setMyLocationEnabled(true);
-
-        // Getting LocationManager object from System Service LOCATION_SERVICE
+    private void locationSettings(){
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(
-                LocationManager.NETWORK_PROVIDER,
-                60000,
-                10, this);
-
-
         if (locationManager != null) {
-            location = locationManager
-                    .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+            String bestProvider = locationManager.getBestProvider(new Criteria(), true);
+            onLocationChanged(locationManager.getLastKnownLocation(bestProvider));
+            locationManager.requestLocationUpdates(bestProvider, 5000, 10, this);
+        }
+    }
 
-            if (location != null) {
-                latitude = location.getLatitude();
-                longitude = location.getLongitude();
-                LatLng latLng = new LatLng(latitude, longitude);
-                // Showing the current location in Google Map
-                googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-                // Zoom in the Google Map
-                googleMap.animateCamera(CameraUpdateFactory.zoomTo(13));
+    public void onGenerateClicked(View v){
+        EditText editField = (EditText) findViewById(R.id.rangeField);
+        if(editField.getText().length() != 0) {
+            if(onPathSet.isDone == true) {
+                onPathSet = new OnPathSet();
+                onPathSet.isDone = false;
+                routeGenerator = new RouteGenerator(startPoint.latitude, startPoint.longitude, googleMap, "walking", onPathSet);
+                googleMap.clear();
+                routeGenerator.DrawRoute(startPoint, Integer.parseInt(editField.getText().toString()));
+            } else {
+                Toast.makeText(getApplicationContext(), "Marsrutas vis dar generuojamas!", Toast.LENGTH_SHORT).show();
             }
-
-            if (location == null) {
-                locationManager.requestLocationUpdates(
-                        LocationManager.GPS_PROVIDER,
-                        60000,
-                        10, this);
-
-                if (locationManager != null) {
-                    location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                    if (location != null) {
-                        latitude = location.getLatitude();
-                        longitude = location.getLongitude();
-
-                        LatLng latLng = new LatLng(latitude, longitude);
-
-                        // Showing the current location in Google Map
-                        googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-
-                        // Zoom in the Google Map
-                        googleMap.animateCamera(CameraUpdateFactory.zoomTo(13));
-                    }
-                }
-            }
+        } else {
+            Toast.makeText(getApplicationContext(), "Nenurodytas atstumas!", Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
     public void onLocationChanged(Location location) {
-
+        if(location != null) {
+            startPoint = new LatLng(location.getLatitude(), location.getLongitude());
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(startPoint));
+            googleMap.animateCamera(CameraUpdateFactory.zoomTo(12));
+        }
     }
 
     @Override

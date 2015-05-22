@@ -31,6 +31,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".screens.GenerateRouteActivity"
+            android:label="@string/title_activity_generate_route" >
+        </activity>
+        <activity
             android:name=".screens.HistoryActivity"
             android:label="@string/title_activity_treniruociu_istorijos_langas" >
         </activity>
@@ -58,10 +62,7 @@
             android:name=".screens.RegisterActivity"
             android:label="@string/title_activity_registracijos_langas" >
         </activity>
-        <activity
-            android:name=".screens.GenerateRouteActivity"
-            android:label="@string/title_activity_generate_route" >
-        </activity>
+       
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDN0yMh3GXiFcOO8xHj2rZjuFpgPBTMMEE"/>
