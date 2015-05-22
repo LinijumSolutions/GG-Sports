@@ -58,6 +58,7 @@
     <string name="error_field_required">This field is required</string>
     <string name="error_invalid_email">This email adress is invalid</string>
     <string name="title_activity_generate_route">Route generation</string>
+    <string name="login_name">Log in with Facebook</string>
     <string name="start_title">Start</string>
     <string name="generate_title">Generate</string>
     <string name="distance_title">Distance</string>

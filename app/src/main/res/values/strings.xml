@@ -64,4 +64,11 @@
     <string name="generate_title">Generuoti</string>
     <string name="start_title">Pradėti</string>
 
+    <string name="facebook_app_id">664150413729047</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_name">Prisijungti su Facebook</string>
+
+
 </resources>
