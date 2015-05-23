@@ -36,18 +36,18 @@ public class Navigator {
     private long arrivalTime;
     private String avoid;
     private ArrayList<Polyline> lines = new ArrayList<>();
-    private boolean isDone;
+    private boolean last;
 
-	public Navigator(GoogleMap map, LatLng startLocation, LatLng endLocation, String mode, boolean isDone){
+	public Navigator(GoogleMap map, LatLng startLocation, LatLng endLocation, String mode, boolean last){
 		this.startPosition = startLocation;
 		this.endPosition = endLocation;
 		this.map = map;
 		this.mode = mode;
-        this.isDone = isDone;
+        this.last = last;
 	}
 	
 	public interface OnPathSetListener{
-		public void onPathSetListener(Directions directions, boolean isDone);
+		public void onPathSetListener(Directions directions, boolean generating);
 	}
 	
 	public void setOnPathSetListener(OnPathSetListener listener){
@@ -218,7 +218,7 @@ public class Navigator {
 				}
 
 				if(listener != null){
-					listener.onPathSetListener(directions, isDone);
+					listener.onPathSetListener(directions, !last);
 				}
 				
 			}

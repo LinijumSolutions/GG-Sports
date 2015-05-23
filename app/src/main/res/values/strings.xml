@@ -51,9 +51,12 @@
     <string name="time">Laikas:</string>
     <string name="speed">Greitis:</string>
     <string name="avg_speed">Vidutinis greitis:</string>
-    <string name="no_internet">Patikrinkite interneto prieigą!</string>
+    <string name="no_internet">Patikrinkite interneto prieiga!</string>
     <string name="map_error">Neimanoma sukurti zemelapio!</string>
     <string name="generating">Marsrutas vis dar generuojamas!</string>
     <string name="no_distance">Nurodykite atstuma!</string>
-
+    <string name="start_warning">Pirmiausiai sugeneruokite marsruta!</string>
+    <string name="title_activity_workout_end">Dalinkis su draugais</string>
+    <string name="skip">Praleisti</string>
+    <string name="share">Dalintis per Facebook</string>
 </resources>

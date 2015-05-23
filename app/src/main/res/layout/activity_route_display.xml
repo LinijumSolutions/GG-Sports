@@ -12,158 +12,95 @@ tools:context=".RouteSelectionActivity">
         android:layout_height="match_parent"
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.MapFragment"
-        android:layout_above="@+id/button5" />
+        android:layout_above="@+id/button5"
+        android:layout_marginBottom="10dp" />
 
     <Button
-        android:layout_width="130dp"
-        android:layout_height="60dp"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
         android:text="@string/training_end"
         android:id="@+id/button4"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/map"
         android:layout_alignEnd="@+id/map"
-        android:layout_toRightOf="@+id/tableLayout"
-        android:layout_toEndOf="@+id/tableLayout" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onEndWorkoutClicked" />
 
     <Button
-        android:layout_width="130dp"
-        android:layout_height="60dp"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
         android:text="@string/pause"
         android:id="@+id/button5"
         android:layout_above="@+id/button4"
         android:layout_alignRight="@+id/map"
-        android:layout_alignEnd="@+id/map" />
+        android:layout_alignEnd="@+id/map"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="50dp" />
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/distance_title"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/map"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/button5"
-        android:layout_toStartOf="@+id/button5"
-        android:layout_below="@+id/map"
-        android:id="@+id/tableLayout"
-        android:layout_alignBottom="@+id/button4"
-        android:layout_marginTop="20dp">
+        android:layout_marginLeft="5dp" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/speed"
+        android:id="@+id/textView6"
+        android:layout_column="3"
+        android:layout_above="@+id/textView5"
+        android:layout_alignLeft="@+id/textView7"
+        android:layout_alignStart="@+id/textView7" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/distance_title"
-                android:id="@+id/textView2"
-                android:layout_below="@+id/map"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="4,3/10 km"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/speed"
-                android:id="@+id/textView6"
-                android:layout_below="@+id/textView5"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_column="3"
-                android:layout_marginLeft="20dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="21 km/h"
+        android:id="@+id/textView7"
+        android:layout_column="3"
+        android:layout_below="@+id/textView6"
+        android:layout_alignRight="@+id/button5"
+        android:layout_alignEnd="@+id/button5"
+        android:layout_marginRight="5dp" />
 
-        </TableRow>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/time"
+        android:id="@+id/textView4"
+        android:layout_above="@+id/textView3"
+        android:layout_centerHorizontal="true" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="4,3/10 km"
-                android:id="@+id/textView3"
-                android:layout_below="@+id/textView2"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="5dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="21 km/h"
-                android:id="@+id/textView7"
-                android:layout_below="@+id/textView6"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="5dp"
-                android:layout_column="3"
-                android:layout_marginLeft="20dp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/time"
-                android:id="@+id/textView4"
-                android:layout_below="@+id/textView3"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/avg_speed"
-                android:id="@+id/textView8"
-                android:layout_above="@+id/textView9"
-                android:layout_alignRight="@+id/textView9"
-                android:layout_alignEnd="@+id/textView9"
-                android:layout_column="3"
-                android:layout_marginLeft="20dp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="0:45:12 h"
-                android:id="@+id/textView5"
-                android:layout_below="@+id/textView4"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="5dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="14,21 km/h"
-                android:id="@+id/textView9"
-                android:layout_alignTop="@+id/textView7"
-                android:layout_toLeftOf="@+id/button4"
-                android:layout_toStartOf="@+id/button4"
-                android:layout_column="3"
-                android:layout_marginLeft="20dp" />
-        </TableRow>
-
-    </TableLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="0:45:12 h"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
 
 </RelativeLayout>

@@ -50,4 +50,8 @@
     <string name="generating">Маршрут еще генерируется!</string>
     <string name="map_error">Невозможно создать карту!</string>
     <string name="no_distance">Укажите расстояние, на первый!</string>
+    <string name="start_warning">Создать маршрут вначале!</string>
+    <string name="skip">Пропускать</string>
+    <string name="share">Поделиться на Facebook</string>
+    <string name="title_activity_workout_end">Поделиться с друзьями</string>
 </resources>

@@ -5,7 +5,6 @@ import android.location.Location;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.linijumsolutions.gg_sports.models.RoutePointCoordinates;
 
 import java.util.HashMap;
@@ -25,18 +24,18 @@ public class RouteGenerator implements Cloneable{
     private LatLng _startCoordinates;
     private String trainingType;
     public double Distance;
-    private OnPathSet onPathSet;
+    private RouteInformation routeInformation;
 
     public GoogleMap Gmap;
 
-    public RouteGenerator(double lat, double lng, GoogleMap userMapControl, String trainingType, OnPathSet onPathSet)
+    public RouteGenerator(LatLng startPoint, GoogleMap userMapControl, String trainingType, RouteInformation routeInformation)
     {
         this.trainingType = trainingType;
-        this.onPathSet = onPathSet;
-        Gmap = userMapControl;
-        _startCoordinates = new LatLng(lat, lng);
-        PointsList = new RoutePointCoordinates(4);
-        Gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(_startCoordinates, 12));
+        this.routeInformation = routeInformation;
+        this.Gmap = userMapControl;
+        this._startCoordinates = startPoint;
+        this.PointsList = new RoutePointCoordinates(4);
+        this.Gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(_startCoordinates, 12));
 
     }
 
@@ -72,11 +71,12 @@ public class RouteGenerator implements Cloneable{
         return Distance == route.Distance;
     }
 
-    public void DrawRoute(LatLng startPoint, float distance)
+    public void DrawRoute(float distance)
     {
+        routeInformation.generating = true;
         while (true)
         {
-            DrawRouteLocal(startPoint, distance);
+            DrawRouteLocal(_startCoordinates, distance);
             if (_previousRoute == null || this.Equals(_previousRoute) == false)
             {
                 try {
@@ -218,12 +218,10 @@ public class RouteGenerator implements Cloneable{
     private boolean DrawLine(LatLng start, LatLng end, boolean loading, RouteGenerator rr, int index)
     {
         float [] localDistances = new float[3];
-        boolean isDone = false;
-        if (index == 3) {
-            isDone = true;
-        }
-        Navigator nav = new Navigator(Gmap, start, end, trainingType, isDone);
-        nav.setOnPathSetListener(onPathSet);
+        boolean last = false;
+        if (index == 3) { last = true; }
+        Navigator nav = new Navigator(Gmap, start, end, trainingType, last);
+        nav.setOnPathSetListener(routeInformation);
         nav.findDirections(false);
 
         Location.distanceBetween(start.latitude, start.longitude, end.latitude, end.longitude, localDistances);
