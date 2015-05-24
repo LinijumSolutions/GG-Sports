@@ -12,7 +12,7 @@ public class RouteInformation implements Navigator.OnPathSetListener {
     public RouteInformation() {
         this.generating = false;
         this.generated = false;
-        this.route = new ArrayList<>();
+        this.route = new ArrayList<LatLng>();
     }
 
     public ArrayList<LatLng> getRoute() {
