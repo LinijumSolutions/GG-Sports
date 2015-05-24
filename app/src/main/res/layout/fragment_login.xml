@@ -8,7 +8,7 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="70dp"
         android:text="@string/login_name"
         android:id="@+id/button3"
         android:textColor="#FFFFFF"
