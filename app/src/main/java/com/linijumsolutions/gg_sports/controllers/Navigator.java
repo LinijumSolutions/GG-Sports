@@ -35,7 +35,7 @@ public class Navigator {
     private boolean alternatives = false;
     private long arrivalTime;
     private String avoid;
-    private ArrayList<Polyline> lines = new ArrayList<Polyline>();
+    private ArrayList<Polyline> lines = new ArrayList<>();
     private boolean last;
 
 	public Navigator(GoogleMap map, LatLng startLocation, LatLng endLocation, String mode, boolean last){

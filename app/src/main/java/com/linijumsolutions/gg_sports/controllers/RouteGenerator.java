@@ -93,8 +93,8 @@ public class RouteGenerator implements Cloneable{
         Distance = 0;
         LatLng[] interPoints = new LatLng[4];
 
-        Map<Double,Double> degreeDecimalsLat = new HashMap<Double, Double>();
-        Map<Double,Double> degreeDecimalsLng = new HashMap<Double, Double>();
+        Map<Double,Double> degreeDecimalsLat = new HashMap<>();
+        Map<Double,Double> degreeDecimalsLng = new HashMap<>();
 
         double mp = 1;
         double value = 1;
