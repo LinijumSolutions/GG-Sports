@@ -83,7 +83,7 @@ public class GenerateRouteActivity extends Activity implements LocationListener 
     }
 
     public void onStartClicked(View v){
-        if(routeInformation.generating == false && routeInformation.generated == true) {
+        if(routeInformation.generating == false && routeInformation.generated == true && routeInformation.getRouteLength() != 0) {
             Intent intent = new Intent(this, RouteDisplayActivity.class);
             Bundle extra = new Bundle();
             extra.putSerializable("route", routeInformation.getRoute());
