@@ -45,17 +45,12 @@ public class MainActivity extends Activity {
     public void onLogoutClicked(View v){
         ParseUser user = ParseUser.getCurrentUser();
         ParseFacebookUtils.unlinkInBackground(user);
-        ParseUser.logOutInBackground(new LogOutCallback() {
-            @Override
-            public void done(ParseException e) {
-                String logoutString = getResources().getString(R.string.logout_message);
-                Toast.makeText(getApplicationContext(),logoutString, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-                MainActivity.this.finish();
-
-            }
-        });
+        ParseUser.logOut();
+        String logoutString = getString(R.string.logout_message);
+        Toast.makeText(getApplicationContext(),logoutString, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+        this.finish();
     }
 
 }
