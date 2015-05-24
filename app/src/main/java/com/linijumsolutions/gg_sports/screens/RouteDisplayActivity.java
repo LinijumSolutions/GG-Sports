@@ -186,6 +186,8 @@ public class RouteDisplayActivity extends FragmentActivity {
 
     public void onEndWorkoutClicked(View v){
         Intent intent = new Intent(this, WorkoutEndActivity.class);
+//        intent.putExtra("distance",);
+//        intent.putExtra("time",);
         startActivity(intent);
     }
 
