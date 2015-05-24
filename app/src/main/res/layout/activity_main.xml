@@ -8,20 +8,19 @@
 
     <Button
         android:layout_width="200dp"
-        android:layout_height="75dp"
+        android:layout_height="48dp"
         android:text="@string/mygtukasManoIstorija"
         android:id="@+id/mygtukasManoIstorija"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:clickable="true"
-        android:textSize="20dp"
         android:onClick="onHistoryClicked"
         android:layout_marginBottom="5dp" />
 
     <Button
         android:layout_width="200dp"
-        android:layout_height="75dp"
+        android:layout_height="48dp"
         android:text="@string/mygtukasMarsrutai"
         android:id="@+id/mygtukasMarsrutai"
         android:layout_below="@+id/mygtukasManoIstorija"
@@ -30,13 +29,12 @@
         android:layout_alignRight="@+id/mygtukasManoIstorija"
         android:layout_alignEnd="@+id/mygtukasManoIstorija"
         android:clickable="true"
-        android:textSize="20dp"
         android:onClick="onAllRoutesClicked"
         android:layout_marginBottom="5dp" />
 
     <Button
         android:layout_width="200dp"
-        android:layout_height="75dp"
+        android:layout_height="48dp"
         android:text="@string/mygtukasIssukiai"
         android:id="@+id/mygtukasIssukiai"
         android:layout_below="@+id/mygtukasMarsrutai"
@@ -44,8 +42,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/mygtukasMarsrutai"
         android:layout_alignEnd="@+id/mygtukasMarsrutai"
-        android:clickable="true"
-        android:textSize="20dp" />
+        android:clickable="true" />
 
     <Button
         android:layout_width="match_parent"
@@ -57,8 +54,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:height="100dp"
-        android:textSize="30dp"
+        android:height="48dp"
         android:onClick="onStartTrainingClicked" />
 
 </RelativeLayout>
