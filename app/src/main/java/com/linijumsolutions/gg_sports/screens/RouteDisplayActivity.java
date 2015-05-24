@@ -34,12 +34,10 @@ public class RouteDisplayActivity extends FragmentActivity {
     private long startTime = 0L;
     long timeSwapBuff = 0L;
     long updatedTime = 0L;
-    // Nagliui reikiamas visas laikas užtruktas
     long timeInMilliseconds = 0L;
     long lastPausedTimeInMilliseconds = 0L;
     long lastAddedToTotalPausedTimeInMilliseconds = 0;
     long totalPausedTimeInMilliseconds = 0L;
-    // Nagliui reikiamas visas atstumas metrais
     float distanceInMeters = 0;
     float lastDistanceIntervalInMeters = 0;
     long lastFixedTimeOnUpdateLocationInMilliseconds = 0L;
@@ -113,7 +111,6 @@ public class RouteDisplayActivity extends FragmentActivity {
                         + String.format("%02d", secs) + ":"
                         + String.format("%03d", milliseconds));
 
-                // Nagliui reikia vidutinio greicio formule apskaiciavimui
                 speedValue.setText((double) Math.round((distanceInMeters / totalsecs * (18 / 5)) * 10) / 10 + " km/h");
                 currentSpeedValue.setText((double) Math.round((lastDistanceIntervalInMeters / (totalsecs - lastsecs) * (18 / 5)) * 10) / 10 + " km/h");
             }
@@ -186,8 +183,11 @@ public class RouteDisplayActivity extends FragmentActivity {
 
     public void onEndWorkoutClicked(View v){
         Intent intent = new Intent(this, WorkoutEndActivity.class);
-//        intent.putExtra("distance",);
-//        intent.putExtra("time",);
+        double timeInSeconds = timeInMilliseconds / 1000;
+        double averageSpeed = (double) Math.round((distanceInMeters / timeInSeconds * (18 / 5)) * 10) / 10;
+        intent.putExtra("distance", distanceInMeters);
+        intent.putExtra("time", timeInSeconds);
+        intent.putExtra("speed", averageSpeed);
         startActivity(intent);
     }
 

@@ -43,6 +43,8 @@ public class MainActivity extends Activity {
     }
 
     public void onLogoutClicked(View v){
+        ParseUser user = ParseUser.getCurrentUser();
+        ParseFacebookUtils.unlinkInBackground(user);
         ParseUser.logOutInBackground(new LogOutCallback() {
             @Override
             public void done(ParseException e) {

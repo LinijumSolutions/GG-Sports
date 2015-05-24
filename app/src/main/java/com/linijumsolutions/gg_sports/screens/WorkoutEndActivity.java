@@ -18,7 +18,8 @@ import com.linijumsolutions.gg_sports.screens.MainActivity;
 public class WorkoutEndActivity extends Activity {
 
     private ShareDialog shareDialog;
-    private String time, distance;
+    private double time, speed;
+    private long distance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +27,9 @@ public class WorkoutEndActivity extends Activity {
         setContentView(R.layout.activity_workout_end);
         shareDialog = new ShareDialog(this);
         Intent intent = getIntent();
-        time = intent.getStringExtra("time");
-        distance = intent.getStringExtra("distance");
+        time = intent.getDoubleExtra("time", 0.0);
+        speed = intent.getDoubleExtra("speed",0.0);
+        distance = intent.getLongExtra("distance", 0L);
     }
 
     public void onSkipClicked(View v){
@@ -41,6 +43,7 @@ public class WorkoutEndActivity extends Activity {
                     .setContentTitle("GG-Sport")
                     .setContentDescription(
                             "The 'Hello Facebook' sample  showcases simple Facebook integration")
+                    .setContentUrl(Uri.parse("http://developers.facebook.com/android"))
                     .build();
 
             shareDialog.show(linkContent);
