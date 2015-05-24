@@ -35,7 +35,7 @@ public class RouteGenerator implements Cloneable{
         this.Gmap = userMapControl;
         this._startCoordinates = startPoint;
         this.PointsList = new RoutePointCoordinates(4);
-        this.Gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(_startCoordinates, 12));
+        this.Gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(_startCoordinates, 13));
 
     }
 
