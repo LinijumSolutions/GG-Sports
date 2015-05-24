@@ -74,6 +74,27 @@ tools:context=".RouteSelectionActivity">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/avg_speed"
+                android:id="@+id/textView10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="0 km/h"
+                android:id="@+id/textView11"
+                android:layout_marginRight="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="116dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/time"
                 android:id="@+id/textView4" />
 
@@ -107,6 +128,7 @@ tools:context=".RouteSelectionActivity">
         android:layout_alignRight="@+id/map"
         android:layout_alignEnd="@+id/map"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="50dp"
+        android:onClick="onPauseClicked"/>
 
 </RelativeLayout>
