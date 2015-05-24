@@ -99,7 +99,7 @@ public class GenerateRouteActivity extends Activity implements LocationListener 
         if(location != null) {
             startPoint = new LatLng(location.getLatitude(), location.getLongitude());
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(startPoint));
-            googleMap.animateCamera(CameraUpdateFactory.zoomTo(12));
+            googleMap.animateCamera(CameraUpdateFactory.zoomTo(13));
         }
     }
 

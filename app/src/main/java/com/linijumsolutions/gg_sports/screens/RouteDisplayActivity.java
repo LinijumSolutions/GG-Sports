@@ -28,16 +28,18 @@ public class RouteDisplayActivity extends FragmentActivity {
         Bundle extra = getIntent().getBundleExtra("extra");
         if(extra != null) {
             route = (ArrayList<LatLng>) extra.getSerializable("route");
-            Toast.makeText(getApplicationContext(), String.valueOf(route.size()), Toast.LENGTH_SHORT).show();
         }
 
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
         map = mapFragment.getMap();
 
+        if(route != null){ map.addPolyline(new PolylineOptions().addAll(route).color(Color.rgb(204,0,0)).width(6)); }
+
         map.setMyLocationEnabled(true);
         map.getUiSettings().setMyLocationButtonEnabled(true);
         map.getUiSettings().setZoomControlsEnabled(true);
         map.getUiSettings().setZoomGesturesEnabled(true);
+        map.animateCamera(CameraUpdateFactory.zoomTo(16));
 
         map.setOnMyLocationChangeListener(myLocationChangeListener);
     }
@@ -62,7 +64,7 @@ public class RouteDisplayActivity extends FragmentActivity {
 
     private void updateRouteInMap () {
         // should paint lines on roads however, on my emulator paints straight lines, you can try bitches ;(
-        PolylineOptions options = new PolylineOptions().width(5).color(Color.BLUE);
+        PolylineOptions options = new PolylineOptions().width(6).color(Color.BLUE);
         options.geodesic(true);
 
         for ( LatLng latlng : currentPoints )
