@@ -54,4 +54,5 @@
     <string name="share">Share on Facebook</string>
     <string name="title_activity_workout_end">Share with your friends</string>
     <string name="logout_message">You logged out</string>
+    <string name="shareTitle">Today I ran, and how about you?</string>
 </resources>

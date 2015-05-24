@@ -60,4 +60,5 @@
     <string name="skip">Praleisti</string>
     <string name="share">Dalintis per Facebook</string>
     <string name="logout_message">Jūs atsijungėte</string>
+    <string name="shareTitle">Šiandien aš bėgau, o tu?</string>
 </resources>

@@ -38,7 +38,6 @@ public class LoginFragment extends Fragment {
 
         permissions = new ArrayList<>();
         permissions.add("user_friends");
-//        permissions.add("publish_actions");
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

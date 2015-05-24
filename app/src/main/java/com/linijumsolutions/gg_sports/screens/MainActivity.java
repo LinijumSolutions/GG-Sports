@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
 import com.facebook.FacebookSdk;
 import com.linijumsolutions.gg_sports.R;
 import com.linijumsolutions.gg_sports.screens.LoginActivity;

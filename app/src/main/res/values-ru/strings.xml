@@ -55,4 +55,5 @@
     <string name="share">Поделиться на Facebook</string>
     <string name="title_activity_workout_end">Поделиться с друзьями</string>
     <string name="logout_message">Вы вышли из</string>
+    <string name="shareTitle">Сегодня я побежал, а вы?</string>
 </resources>
