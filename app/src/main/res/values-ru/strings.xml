@@ -54,4 +54,5 @@
     <string name="skip">Пропускать</string>
     <string name="share">Поделиться на Facebook</string>
     <string name="title_activity_workout_end">Поделиться с друзьями</string>
+    <string name="logout_message">Paka</string>
 </resources>
