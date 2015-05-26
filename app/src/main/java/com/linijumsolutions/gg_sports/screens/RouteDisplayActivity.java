@@ -24,7 +24,7 @@ import java.util.ArrayList;
 public class RouteDisplayActivity extends FragmentActivity {
     private GoogleMap map;
     private ArrayList<LatLng> route;
-    private ArrayList<LatLng> currentPoints = new ArrayList<LatLng>();
+    private ArrayList<Location> currentPoints = new ArrayList<Location>();
     private Boolean isPaused = false;
 
 
@@ -39,9 +39,10 @@ public class RouteDisplayActivity extends FragmentActivity {
     long lastAddedToTotalPausedTimeInMilliseconds = 0;
     long totalPausedTimeInMilliseconds = 0L;
     float distanceInMeters = 0;
-    float lastDistanceIntervalInMeters = 0;
     long lastFixedTimeOnUpdateLocationInMilliseconds = 0L;
     long secondLastFixedTimeOnUpdateLocationInMilliseconds = 0L;
+
+    float currentSpeedMetersPerSecond = 0;
 
     // views
     private TextView timerValue;
@@ -101,9 +102,7 @@ public class RouteDisplayActivity extends FragmentActivity {
 
                 timeInMilliseconds = SystemClock.uptimeMillis() - startTime;
                 updatedTime = timeSwapBuff + timeInMilliseconds - totalPausedTimeInMilliseconds;
-                float lastUpdatedTime = timeSwapBuff + lastFixedTimeOnUpdateLocationInMilliseconds;
                 int totalsecs = (int) (updatedTime / 1000);
-                int lastsecs = (int) (lastUpdatedTime / 1000);
                 int mins = totalsecs / 60;
                 int secs = totalsecs % 60;
                 int milliseconds = (int) (updatedTime % 1000);
@@ -111,8 +110,9 @@ public class RouteDisplayActivity extends FragmentActivity {
                         + String.format("%02d", secs) + ":"
                         + String.format("%03d", milliseconds));
 
+
                 speedValue.setText((double) Math.round((distanceInMeters / totalsecs * (18 / 5)) * 10) / 10 + " km/h");
-                currentSpeedValue.setText((double) Math.round((lastDistanceIntervalInMeters / (totalsecs - lastsecs) * (18 / 5)) * 10) / 10 + " km/h");
+                currentSpeedValue.setText((double) Math.round((currentSpeedMetersPerSecond * (18 / 5)) * 10) / 10 + " km/h");
             }
             else {
                 lastPausedTimeInMilliseconds = SystemClock.uptimeMillis() - startTime - timeInMilliseconds;
@@ -126,9 +126,9 @@ public class RouteDisplayActivity extends FragmentActivity {
         @Override
         public void onMyLocationChange(Location location) {
             if(!isPaused) {
-                LatLng loc = new LatLng(location.getLatitude(), location.getLongitude());
+                LatLng locationLatLng = new LatLng(location.getLatitude(), location.getLongitude());
 
-                currentPoints.add(loc);
+                currentPoints.add(location);
 
                 if(currentPoints.size() > 1) {
                     updateRouteInMap();
@@ -136,7 +136,7 @@ public class RouteDisplayActivity extends FragmentActivity {
                 }
 
                 if(map != null){
-                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 16.0f));
+                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(locationLatLng, 16.0f));
                 }
             }
         }
@@ -144,22 +144,17 @@ public class RouteDisplayActivity extends FragmentActivity {
 
     private void updateStatistics () {
         if(!isPaused) {
+            distanceInMeters = 0;
             for (int i = 0; i < currentPoints.size() - 1; i++) {
-                Location location1 = new Location("");
-                location1.setLatitude(currentPoints.get(i).latitude);
-                location1.setLongitude(currentPoints.get(i).longitude);
-
-                Location location2 = new Location("");
-                location2.setLatitude(currentPoints.get(i + 1).latitude);
-                location2.setLongitude(currentPoints.get(i + 1).longitude);
-
-                distanceInMeters += location1.distanceTo(location2);
-                lastDistanceIntervalInMeters = location1.distanceTo(location2);
+                distanceInMeters += currentPoints.get(i).distanceTo(currentPoints.get(i + 1));
             }
             if (currentPoints.size() > 2) {
                 secondLastFixedTimeOnUpdateLocationInMilliseconds = lastFixedTimeOnUpdateLocationInMilliseconds;
                 lastFixedTimeOnUpdateLocationInMilliseconds = timeInMilliseconds;
             }
+
+            // VISADA ATIDUODA NULI ??????
+            currentSpeedMetersPerSecond = currentPoints.get(currentPoints.size()-1).getSpeed();
 
             distanceValue.setText((double) Math.round((distanceInMeters / 1000) * 10) / 10 + " km");
         }
@@ -172,8 +167,8 @@ public class RouteDisplayActivity extends FragmentActivity {
             PolylineOptions options = new PolylineOptions().width(6).color(Color.BLUE);
             options.geodesic(true);
 
-            for (LatLng latlng : currentPoints) {
-                options.add(latlng);
+            for (Location location : currentPoints) {
+                options.add(new LatLng(location.getLatitude(), location.getLongitude()));
             }
 
             map.addPolyline(options);

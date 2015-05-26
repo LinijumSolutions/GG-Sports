@@ -36,7 +36,7 @@ public class LoginFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         Button button = (Button) view.findViewById(R.id.button3);
 
-        permissions = new ArrayList<>();
+        permissions = new ArrayList<String>();
         permissions.add("user_friends");
 
         button.setOnClickListener(new View.OnClickListener() {
