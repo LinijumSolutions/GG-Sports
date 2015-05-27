@@ -26,11 +26,8 @@ public class RouteDisplayActivity extends FragmentActivity {
     private ArrayList<LatLng> route;
     private ArrayList<Location> currentPoints = new ArrayList<Location>();
     private Boolean isPaused = false;
-
-
     protected Handler customHandler = new Handler();
 
-    // time values
     private long startTime = 0L;
     long timeSwapBuff = 0L;
     long updatedTime = 0L;
@@ -41,10 +38,9 @@ public class RouteDisplayActivity extends FragmentActivity {
     float distanceInMeters = 0;
     long lastFixedTimeOnUpdateLocationInMilliseconds = 0L;
     long secondLastFixedTimeOnUpdateLocationInMilliseconds = 0L;
-
     float currentSpeedMetersPerSecond = 0;
 
-    // views
+
     private TextView timerValue;
     private TextView speedValue;
     private TextView currentSpeedValue;
@@ -56,11 +52,11 @@ public class RouteDisplayActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_route_display);
         Bundle extra = getIntent().getBundleExtra("extra");
+
         if(extra != null) {
             route = (ArrayList<LatLng>) extra.getSerializable("route");
         }
 
-        // Set views
         timerValue = (TextView)findViewById(R.id.textView5);
         speedValue = (TextView)findViewById(R.id.textView11);
         currentSpeedValue = (TextView)findViewById(R.id.textView7);
@@ -110,7 +106,6 @@ public class RouteDisplayActivity extends FragmentActivity {
                         + String.format("%02d", secs) + ":"
                         + String.format("%03d", milliseconds));
 
-
                 speedValue.setText((double) Math.round((distanceInMeters / totalsecs * (18 / 5)) * 10) / 10 + " km/h");
                 currentSpeedValue.setText((double) Math.round((currentSpeedMetersPerSecond * (18 / 5)) * 10) / 10 + " km/h");
             }
@@ -125,20 +120,20 @@ public class RouteDisplayActivity extends FragmentActivity {
     private GoogleMap.OnMyLocationChangeListener myLocationChangeListener = new GoogleMap.OnMyLocationChangeListener() {
         @Override
         public void onMyLocationChange(Location location) {
-            if(!isPaused) {
-                LatLng locationLatLng = new LatLng(location.getLatitude(), location.getLongitude());
+        if(!isPaused) {
+            LatLng locationLatLng = new LatLng(location.getLatitude(), location.getLongitude());
 
-                currentPoints.add(location);
+            currentPoints.add(location);
 
-                if(currentPoints.size() > 1) {
-                    updateRouteInMap();
-                    updateStatistics();
-                }
-
-                if(map != null){
-                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(locationLatLng, 16.0f));
-                }
+            if(currentPoints.size() > 1) {
+                updateRouteInMap();
+                updateStatistics();
             }
+
+            if(map != null){
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(locationLatLng, 16.0f));
+            }
+        }
         }
     };
 
@@ -153,7 +148,6 @@ public class RouteDisplayActivity extends FragmentActivity {
                 lastFixedTimeOnUpdateLocationInMilliseconds = timeInMilliseconds;
             }
 
-            // VISADA ATIDUODA NULI ??????
             currentSpeedMetersPerSecond = currentPoints.get(currentPoints.size()-1).getSpeed();
 
             distanceValue.setText((double) Math.round((distanceInMeters / 1000) * 10) / 10 + " km");
@@ -163,7 +157,6 @@ public class RouteDisplayActivity extends FragmentActivity {
 
     private void updateRouteInMap () {
         if(!isPaused) {
-            // should paint lines on roads however, on my emulator paints straight lines, you can try bitches ;(
             PolylineOptions options = new PolylineOptions().width(6).color(Color.BLUE);
             options.geodesic(true);
 
@@ -184,6 +177,7 @@ public class RouteDisplayActivity extends FragmentActivity {
         intent.putExtra("time", timeInSeconds);
         intent.putExtra("speed", averageSpeed);
         startActivity(intent);
+        this.finish();
     }
 
     public void onPauseClicked(View v) {

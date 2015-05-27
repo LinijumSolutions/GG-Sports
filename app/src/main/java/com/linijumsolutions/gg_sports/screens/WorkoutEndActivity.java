@@ -29,7 +29,7 @@ public class WorkoutEndActivity extends Activity {
     private ShareDialog shareDialog;
     private double time, speed;
     private float distance;
-    private String t,s,d;
+    private String t, s, d;
     private ProgressBar progressBar;
     private CallbackManager callbackManager;
 
@@ -47,14 +47,10 @@ public class WorkoutEndActivity extends Activity {
             }
 
             @Override
-            public void onCancel() {
-
-            }
+            public void onCancel() {}
 
             @Override
-            public void onError(FacebookException e) {
-
-            }
+            public void onError(FacebookException e) {}
         });
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setVisibility(View.GONE);
@@ -77,17 +73,17 @@ public class WorkoutEndActivity extends Activity {
     public void onShareClicked(final View v){
         if (ShareDialog.canShow(ShareLinkContent.class)) {
             progressBar.setVisibility(View.VISIBLE);
-            String content = getString(R.string.time) +" " + t + "h, "+ getString(R.string.distance_title)+" "
-                    + d + "m, "+getString(R.string.avg_speed)+" " +s+ "m/sec.";
+            String content = getString(R.string.time) + " " + t + "h, " + getString(R.string.distance_title)+ " "
+                    + d + "km, " + getString(R.string.avg_speed)+ " " + s + "km/h.";
             ShareLinkContent linkContent = new ShareLinkContent.Builder()
                     .setContentTitle(getString(R.string.shareTitle))
                     .setContentDescription(content)
                     .setContentUrl(Uri.parse("http://ggtryhard.com/"))
                     .setImageUrl(Uri.parse("http://www.logodesignlove.com/images/simple-logos/aol-running-man-logo.jpg"))
                     .build();
-
             shareDialog.show(linkContent);
         }
+
     }
 
     @Override
